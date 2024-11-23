@@ -85,7 +85,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-5 left-section d-flex flex-column justify-content-center align-items-start">
-                <img src="assets/MyEmployee-Logo.png" alt="Logo" style="width: 120px;">
+                <img src="{{ asset('images/MyEmployee-Logo.png') }}" alt="Logo" style="width: 120px;">
                 <h1><span style="color: #FFC20E;">My</span>Employee</h1>
                 <h2>Portal Sistem Informasi Pegawai</h2>
                 <div class="box-decor my-3"></div>
