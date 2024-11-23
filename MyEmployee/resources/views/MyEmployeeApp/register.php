@@ -97,13 +97,9 @@
                     <p class="text-muted fs-5">Daftar Sekarang!</p>
                     <form>
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="NamaDepan">Nama Depan</label>
-                                <input type="text" id="NamaDepan" class="form-control" placeholder="Masukkan nama depan">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="NamaBelakang">Nama Belakang</label>
-                                <input type="text" id="NamaBelakang" class="form-control" placeholder="Masukkan nama belakang">
+                            <div class="col-md-12">
+                                <label for="nama">Nama</label>
+                                <input type="text" id="nama" class="form-control" placeholder="Masukkan nama">
                             </div>
                         </div>
                         <div class="row mb-3">
