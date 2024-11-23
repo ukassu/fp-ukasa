@@ -53,8 +53,8 @@
 
         .card {
             padding: 2rem;
-            margin-top: 15.2rem;
-            margin-bottom: 15.2rem;
+            margin-top: 7.1rem;
+            margin-bottom: 7.1rem;
         }
 
         .register-button {
