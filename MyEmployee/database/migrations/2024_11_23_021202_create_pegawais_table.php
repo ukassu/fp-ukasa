@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pegawais', function (Blueprint $table) {
-            $table->string('nik')->unique();
+            $table->string('nik')->primary();
             $table->string('name');
+            $table->string('no_telp');
             $table->string('asal_kota')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->nullable();
