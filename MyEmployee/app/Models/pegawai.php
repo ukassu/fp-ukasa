@@ -8,7 +8,7 @@ class pegawai extends Model
 {
     protected $fillable = [
         'nik',
-        'nama',
+        'name',
         'asal_kota',
         'tanggal_lahir',
         'jenis_kelamin',
