@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('pegawais', function (Blueprint $table) {
             $table->string('nik')->unique();
-            $table->string('nama');
-            $table->string('email');
-            $table->string('no_telp');
-            $table->string('password');
+            $table->string('name');
             $table->string('asal_kota')->nullable();
             $table->date('tanggal_lahir')->nullable();
-            $table->enum('jenis_kelamin', ['male', 'female'])->nullable();
+            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->nullable();
             $table->text('alamat')->nullable();
             $table->string('posisi')->nullable();
         });
