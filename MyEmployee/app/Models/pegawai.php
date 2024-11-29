@@ -6,19 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class pegawai extends Model
 {
+    protected $table = 'pegawais';
     protected $fillable = [
         'nik',
-        'nama',
-        'email',
+        'name',
         'no_telp',
-        'password',
         'asal_kota',
         'tanggal_lahir',
         'jenis_kelamin',
         'alamat',
         'posisi',
-    ];
-    protected $hidden = [
-        'password',
     ];
 }
