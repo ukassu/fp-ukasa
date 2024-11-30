@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PegawaiController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +13,6 @@ Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name(
 
 // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/login', function () {
-    return view('MyEmployeeApp.index');
-})->name('login');
+Route::get('/dashboard', function () {
+    return view('MyEmployeeApp.dashboard');
+})->middleware(['auth'])->name('dashboard');
