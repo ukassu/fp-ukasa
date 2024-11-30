@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="icon" href="assets/MyEmployee-Logo.png">
+    <link rel="icon" href="{{ asset('images/MyEmployee-Logo.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,10 +86,10 @@
                     <ul class="navbar-nav" id="navItem">
                         <div class="nav-higlighter"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profil.html">Profil</a>
+                            <a class="nav-link" href="profil.php">Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Notifikasi</a>
@@ -103,7 +103,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="script.js"></script>
+    <script src="{{ asset('code.js') }}"></script>
 </body>
-
 </html>
