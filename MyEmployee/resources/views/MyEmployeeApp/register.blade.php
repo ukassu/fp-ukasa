@@ -90,7 +90,7 @@
                 <h1><span style="color: #FFC20E;">My</span>Employee</h1>
                 <h2>Portal Sistem Informasi Pegawai</h2>
                 <div class="box-decor my-3"></div>
-                <button class="redirect-button">Sudah Punya Akun?</button>
+                <button class="redirect-button"><a href="{{ route('login') }}" class="text-decoration-none" style="color: black">Sudah Punya Akun?</a></button>
             </div>
             <div class="col-lg-7 bg-white">
                 <div class="card">

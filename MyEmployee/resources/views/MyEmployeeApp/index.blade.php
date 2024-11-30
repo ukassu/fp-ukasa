@@ -31,7 +31,7 @@
 
 <body>
     <h1 style="font-family:albert sans; font-size: 75px; position: absolute; left: 22cm; top: 8.5cm;"><span style="color: #FFC20E;"><b>My</b></span><span style="color: white;"><b>Employee</b></span></h1>
-    <img src="assets/MyEmployee-Logo.png" alt="logo" style="position: absolute; width: 120px; height: auto; top: 8.2cm; left: 18.3cm;">
+    <img src="{{ asset('images/MyEmployee-Logo.png') }}" alt="logo" style="position: absolute; width: 120px; height: auto; top: 8.2cm; left: 18.3cm;">
     <div class="container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
