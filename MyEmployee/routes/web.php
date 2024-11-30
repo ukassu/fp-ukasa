@@ -9,13 +9,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/register', [PegawaiController::class, 'index']);
 Route::match(['get', 'post'], '/register', [AuthController::class, 'register'])->name('register');
+Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name('login');
+
+// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/login', function () {
     return view('MyEmployeeApp.index');
 })->name('login');
-
-Route::get('/profil', function () {
-    
-});

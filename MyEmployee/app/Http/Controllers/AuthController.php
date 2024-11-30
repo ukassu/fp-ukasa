@@ -42,4 +42,37 @@ class AuthController extends Controller
             return redirect()->route('login');
         }
     }
+
+    public function login(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return view('MyEmployeeApp.index');
+        }
+
+        if ($request->isMethod('post')) {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required'
+            ]);
+
+            $credentials = $request->only('email', 'password');
+
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();
+                return redirect()->route('dashboard');
+            }
+
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->withInput($request->except('password'));
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login');
+    }
 }

@@ -33,7 +33,8 @@
     <h1 style="font-family:albert sans; font-size: 75px; position: absolute; left: 22cm; top: 8.5cm;"><span style="color: #FFC20E;"><b>My</b></span><span style="color: white;"><b>Employee</b></span></h1>
     <img src="assets/MyEmployee-Logo.png" alt="logo" style="position: absolute; width: 120px; height: auto; top: 8.2cm; left: 18.3cm;">
     <div class="container">
-        <form>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
             <div class="card card-center" style="width: 40%; height: 100%; position: absolute; left: 0cm;">
                 <div class="mb-3" style="width: 75%;">
                     <h1 style="font-family: albert sans; color: #253D90;"><b>Login!</b></h1>
@@ -43,7 +44,7 @@
                 </div>
                 <div class="mb-3" style="width: 75%;">
                     <label for="password" class="form-label" style="font-family: albert sans; color:#253D90; font-size: 14px;"><b>Password</b></label>
-                    <input type="password" class="form-control" name="password" id="password" aria-describedby="emailHelp">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password" aria-describedby="emailHelp">
                 </div>
                 <div style="width: 75%;">
                     <a href="" style="color: #253D90; position: relative; left: 9.4cm; font-size: 14px;"><b>Lupa Password</b></a>
