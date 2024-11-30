@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('alamat')->nullable();
             $table->string('posisi')->nullable();
             $table->foreignId('user_id')->constrained(table:'users', column:'id');
+            $table->timestamps();
         });
     }
 

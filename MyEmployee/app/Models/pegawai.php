@@ -16,5 +16,11 @@ class pegawai extends Model
         'jenis_kelamin',
         'alamat',
         'posisi',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

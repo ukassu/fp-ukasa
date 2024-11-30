@@ -95,32 +95,57 @@
                 <div class="card">
                     <h1 class="text-primary"><b>Selamat Datang di <span style="color: #FFC20E;">My</span>Employee</b></h1>
                     <p class="text-muted fs-5">Daftar Sekarang!</p>
-                    <form>
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="nik">NIK</label>
+                                <input type="text" id="nik" name="nik" class="form-control" placeholder="Masukkan NIK">
+                            </div>
+                            @error('nik')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <label for="nama">Nama</label>
-                                <input type="text" id="nama" class="form-control" placeholder="Masukkan nama">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Masukkan nama">
                             </div>
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="email">Alamat E-mail</label>
-                                <input type="email" id="email" class="form-control" placeholder="Masukkan e-mail">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Masukkan e-mail">
                             </div>
+                            @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="col-md-6">
                                 <label for="phone">Nomor Telepon</label>
-                                <input type="text" id="phone" class="form-control" placeholder="Masukkan nomor telepon">
+                                <input type="text" id="no_telp" name="no_telp" class="form-control" placeholder="Masukkan nomor telepon">
                             </div>
+                            @error('no_telp')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="password">Password</label>
-                                <input type="password" id="password" class="form-control" placeholder="Masukkan password">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Masukkan password">
                             </div>
+                            @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="col-md-6">
                                 <label for="confirmPassword">Konfirmasi Password</label>
-                                <input type="password" id="confirmPassword" class="form-control" placeholder="Ulangi password">
+                                <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Ulangi password">
                             </div>
+                            @error('confirm_password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-check mb-4">
                             <input type="checkbox" id="agree" class="form-check-input">

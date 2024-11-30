@@ -12,7 +12,7 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        return view('MyEmployeeApp.register');
+        // return view('MyEmployeeApp.register');
     }
 
     /**
