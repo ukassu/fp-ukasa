@@ -75,7 +75,7 @@
         <nav class="navbar navbar-expand-lg custom-navbar">
             <div class="container-fluid navbar-inside">
                 <a class="navbar-brand home-nav" href="#" style="color: white;"><span style="color: #FFC20E;"><img
-                    class="custom-logo" src="/assets/MyEmployee-Logo.png"
+                    class="custom-logo" src="{{ asset('images/MyEmployee-Logo.png') }}"
                     alt="Logo"><b>My</b></span><b>Employee</b>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
