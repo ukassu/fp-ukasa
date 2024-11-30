@@ -32,6 +32,21 @@
 
         a.nav-link {
             color: white;
+            transition: ease-in-out 0.3s;
+        }
+
+        a.nav-link:hover {
+            transform: translateY(-5px);
+            color: #FFC20E;
+        }
+
+        a.navbar-brand {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        a.navbar-brand:hover {
+            transition: ease-in-out 0.3s;
+            transform: scale(1.1);
         }
 
         .navbar-inside {
@@ -63,6 +78,22 @@
             z-index: 1;
         }
 
+        .logout-button {
+            background-color: #FFC20E;
+            color: black;
+            width: 100px;
+            height: 45px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 8px black;
+            position: relative;
+            left: 15cm;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logout-button:hover {
+            transform: scale(1.1);
+        }
+
         .custom-logo {
             max-width: 75px;
             padding-right: 0.5cm;
@@ -89,12 +120,16 @@
                             <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profil.php">Profil</a>
+                            <a class="nav-link" href="{{ route('profil') }}">Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Notifikasi</a>
                         </li>
                     </ul>
+                    <form action="{{ route('logout')}}" method="post">
+                        @csrf
+                        <button type="submit" class="logout-button">Log Out!</button>
+                    </form>
                 </div>
             </div>
         </nav>

@@ -32,6 +32,20 @@
 
         a.nav-link {
             color: white;
+            transition: ease-in-out 0.3s;
+        }
+
+        a.nav-link:hover {
+            transform: translateY(-5px);
+            color: #FFC20E;
+        }
+
+        a.navbar-brand {
+            transition: transform ease-in-out 0.3s;
+        }
+
+        a.navbar-brand:hover {
+            transform: scale(1.1);
         }
 
         .navbar-inside {
@@ -63,6 +77,22 @@
             z-index: 1;
         }
 
+        .logout-button {
+            background-color: #FFC20E;
+            color: black;
+            width: 100px;
+            height: 45px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 8px black;
+            position: relative;
+            left: 15cm;
+            transition: transform ease-in-out 0.3s;
+        }
+
+        .logout-button:hover {
+            transform: scale(1.1);
+        }
+
         .custom-logo {
             max-width: 75px;
             padding-right: 0.5cm;
@@ -87,15 +117,19 @@
                     <ul class="navbar-nav" id="navItem">
                         <div class="nav-higlighter"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profil.html">Profil</a>
+                            <a class="nav-link" href="{{ route('profil')}}">Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Notifikasi</a>
                         </li>
                     </ul>
+                    <form action="{{ route('logout')}}" method="post">
+                        @csrf
+                        <button type="submit" class="logout-button">Log Out!</button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -104,7 +138,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="script.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
