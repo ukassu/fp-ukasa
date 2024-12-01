@@ -105,7 +105,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom-navbar">
             <div class="container-fluid navbar-inside">
-                <a class="navbar-brand home-nav" href="#" style="color: white;"><span style="color: #FFC20E;"><img
+                <a class="navbar-brand home-nav" href="{{ route('dashboard') }}" style="color: white;"><span style="color: #FFC20E;"><img
                     class="custom-logo" src="{{ asset('images/MyEmployee-Logo.png') }}"
                     alt="Logo"><b>My</b></span><b>Employee</b>
                 </a>
@@ -134,7 +134,7 @@
             </div>
         </nav>
     </div>
-    @yield('content')
+    @yield('navbar')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

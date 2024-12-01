@@ -1,5 +1,5 @@
 @extends ('MyEmployeeApp.layout')
 @section('title', 'Dashboard')
-@section('content')
-    <h1 style="position: absolute; top: 10cm;">Dashboard</h1>
+@section('navbar')
+    <h1 style="position: absolute; top: 10cm;">BINTANG TAMPAN</h1>
 @endsection
