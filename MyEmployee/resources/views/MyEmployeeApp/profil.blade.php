@@ -22,7 +22,7 @@
                 padding-bottom: 0.5cm;
             }
 
-            .update-button {
+            .section-button {
                 width: 250px;
                 background-color: #253D90;
                 color: white;
@@ -33,18 +33,40 @@
                 box-shadow: 2px 4px 6px black;
             }
 
-            .update-button:hover {
+            .section-button:hover {
                 background-color: #FFC20E;
                 border: solid #FFC20E;
                 font-weight: bold;
                 color: black;
                 transform: scale(1.05);
             }
+
+            .nav-button {
+                margin-left: 3rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .navigation-section {
+                position: absolute;
+                top: 17rem;
+                width: 25%;
+                left: 5cm;
+                border-radius: 1rem;
+                box-shadow: 2px 2px 8px gray;
+            }
+            
         </style>
     </head>
     <body>
         <div class="container-fluid">
-            <div style="position: absolute; top: 5cm; left: 20cm; width: 45%;" class="card">
+            <div class="card navigation-section">
+                <div class="card-body">
+                    <button class="section-button nav-button">Info Pribadi</button>
+                    <button class="section-button nav-button">Kontak</button>
+                </div>
+            </div>
+            <div style="position: absolute; top: 3cm; left: 20cm; width: 45%; box-shadow: 2px 2px 8px gray;" class="card">
                 <div class="card-body">
                     <form method="POST" action="{{ route('profil.update') }}">
                         @csrf
@@ -56,12 +78,12 @@
                           <label for="name" class="form-label">Nama Lengkap</label>
                           <input type="text" value="{{ old('name', $pegawai->name) }}" class="form-control" name="name" id="name">
                         </div>
-                        <div class="mb-3 form-inside">
+                        <!-- <div class="mb-3 form-inside">
                             <label for="email" class="form-label"> Email</label>
                             <label for="no_telp" class="form-label">No. Telepon</label>
                             <input type="text" value="{{ old('email', $users->email) }}" class="form-control" name="email" id="email">
                             <input type="text" value="{{ old('no_telp', $pegawai->no_telp) }}" class="form-control" name="no_telp" id="no_telp">
-                        </div>
+                        </div> -->
                         <div class="mb-3 form-inside">
                             <label for="jenis_kelamin" class="form-label"> Jenis Kelamin</label>
                             <label for="posisi" class="form-label">Posisi</label>
@@ -83,9 +105,10 @@
                             <input type="text" value="{{ old('alamat', $pegawai->alamat) }}" class="form-control" name="alamat" id="alamat">
                         </div>
                         <div class="button-position">
-                            <button type="submit" class="update-button">Update</button>
+                            <button type="submit" class="section-button">Update</button>
                         </div>
-                      </form>
+                    </form>
+                    
                 </div>
             </div>
         </div>
