@@ -46,7 +46,7 @@
         <div class="container-fluid">
             <div style="position: absolute; top: 5cm; left: 20cm; width: 45%;" class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('profil.update') }}">
+                    <form method="POST" action="{{ $action }}">
                         @csrf
                         <div class="mb-3">
                             <label for="nik" class="form-label">NIK</label>
@@ -55,12 +55,6 @@
                         <div class="mb-3">
                           <label for="name" class="form-label">Nama Lengkap</label>
                           <input type="text" value="{{ old('name', $pegawai->name) }}" class="form-control" name="name" id="name">
-                        </div>
-                        <div class="mb-3 form-inside">
-                            <label for="email" class="form-label"> Email</label>
-                            <label for="no_telp" class="form-label">No. Telepon</label>
-                            <input type="text" value="{{ old('email', $users->email) }}" class="form-control" name="email" id="email">
-                            <input type="text" value="{{ old('no_telp', $pegawai->no_telp) }}" class="form-control" name="no_telp" id="no_telp">
                         </div>
                         <div class="mb-3 form-inside">
                             <label for="jenis_kelamin" class="form-label"> Jenis Kelamin</label>

@@ -13,10 +13,9 @@ Route::match(['get', 'post'], '/login', [AuthController::class, 'login'])->name(
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/profil', [PegawaiController::class, 'show'])->name('profil');
+Route::post('/profil', [PegawaiController::class, 'update'])->name('profil.update');
+
 Route::get('/dashboard', function () {
     return view('MyEmployeeApp.dashboard');
 })->middleware(['auth'])->name('dashboard');
-
-Route::get('/profil', function() {
-    return view('MyEmployeeApp.profil');
-})->middleware(['auth'])->name('profil');

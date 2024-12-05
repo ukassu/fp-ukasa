@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class pegawai extends Model
 {
+
     protected $table = 'pegawais';
+    protected $primaryKey = 'nik';
+    public $incrementing = false;
+    protected $keyType = 'string'; 
+
     protected $fillable = [
         'nik',
         'name',
