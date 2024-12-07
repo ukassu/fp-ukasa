@@ -57,12 +57,12 @@ logoutButton.addEventListener("click", () => {
 //Jam
 function updateClock() {
   const jam = document.getElementById('clock');
-  if (jam) {
-    const now = new Date();
-    jam.textContent = now.toLocaleTimeString();
-    requestAnimationFrame(updateClock);
-  }
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  
+  jam.textContent = timeString;
 }
+setInterval(updateClock, 1000);
 updateClock();
 
 //tanggal

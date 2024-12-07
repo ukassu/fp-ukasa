@@ -221,12 +221,6 @@
                 <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
             </form>
         </div>
-        <div id="clock"></div>
-        <div>
-            <form method="GET" action="{{ route('dashboard') }}">
-                <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
-            </form>
-        </div>
         <div class="calendar">
             <div id="date"></div>
             <div id="clock"></div>
