@@ -24,6 +24,7 @@ const setHighlightPosition = (element) => {
 // Event listener untuk logo
 logo.addEventListener("click", () => {
     localStorage.removeItem("activeNav");
+    localStorage.setItem('activeTab', 'info'); 
     setHighlightPosition(lists[DEFAULT_NAV_INDEX]);
 });
 
@@ -38,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const activeIndex = localStorage.getItem("activeNav");
   if (activeIndex !== null) {
     const activeElement = lists[activeIndex];
-    setHighlightPosition(activeElement);
+    setHighlightPosition(activeElement); 
   } else {
     setHighlightPosition(lists[DEFAULT_NAV_INDEX]);
   }
@@ -52,6 +53,7 @@ const handleLogout = () => {
 // Event listener untuk tombol logout
 logoutButton.addEventListener("click", () => {
   handleLogout();
+  localStorage.setItem('activeTab', 'info'); 
 });
 
 //Jam

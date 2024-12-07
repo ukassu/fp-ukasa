@@ -17,6 +17,7 @@ return new class extends Migration
             $table->time('waktu_masuk');
             $table->time('waktu_keluar')->nullable();
             $table->foreignId('user_id')->constrained(table:'users', column:'id');
+            $table->timestamps();
         });
     }
 

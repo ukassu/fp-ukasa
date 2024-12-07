@@ -244,7 +244,7 @@
                             <div class="content-subtitle">Lihat tugas anda!</div>
                         </div>
                     </button>
-                    <button class="dashboard-content-button">
+                    <button type="button" class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#absenmodal">
                         <div class="button-content">
                             <i class="fa-solid fa-clock content-icon"></i>
                         <div class="button-text">
@@ -276,6 +276,30 @@
                             </div>
                         </button>
                     </button>
+                    {{-- modal --}}
+                    <div class="modal fade" id="absenmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Absensi</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{ route('absen') }}" method="POST">
+                                    @csrf
+                                    <button type="submit">Mulai Bekerja</button>
+                                </form>
+                                <form action="{{ route('pulang') }}" method="POST">
+                                    @csrf
+                                    <button type="submit">Selesai Bekerja</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>

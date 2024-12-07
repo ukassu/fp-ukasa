@@ -15,3 +15,5 @@ Route::get('/profil', [PegawaiController::class, 'show'])->middleware(['auth'])-
 Route::post('/profil', [PegawaiController::class, 'update'])->middleware(['auth'])->name('profil.update');
 
 Route::get('/dashboard', [DashboardController::class, 'show'])->middleware(['auth'])->name('dashboard');
+Route::post('/dashboard/absen', [DashboardController::class, 'absen'])->middleware(['auth'])->name('absen');
+Route::post('/dashboard/pulang', [DashboardController::class, 'pulang'])->middleware(['auth'])->name('pulang');
