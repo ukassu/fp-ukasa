@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('pegawais', function (Blueprint $table) {
             $table->string('nik')->primary();
             $table->string('name');
+            $table->string('email_pribadi')->nullable();
             $table->string('no_telp');
             $table->string('asal_kota')->nullable();
             $table->date('tanggal_lahir')->nullable();

@@ -16,6 +16,7 @@ class pegawai extends Model
         'nik',
         'name',
         'no_telp',
+        'email_pribadi',
         'asal_kota',
         'tanggal_lahir',
         'jenis_kelamin',

@@ -11,9 +11,15 @@ class kontak extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $pegawai;
+    public $action;
+    public $users;
+
+    public function __construct($pegawai, $action, $users)
     {
-        //
+        $this->pegawai = $pegawai;
+        $this->action = $action;
+        $this->users = $users;
     }
 
     /**

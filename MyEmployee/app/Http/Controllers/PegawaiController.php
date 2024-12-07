@@ -38,8 +38,8 @@ class PegawaiController extends Controller
      */
     public function show(pegawai $pegawai)
     {
-        $users = Auth::user(); 
-        $pegawai = $users->pegawai; 
+        $users = Auth::user();
+        $pegawai = $users->pegawai;
         return view('MyEmployeeApp.profil', compact('pegawai', 'users'));
     }
 
@@ -63,36 +63,25 @@ class PegawaiController extends Controller
             return redirect()->back()->withErrors('Data pegawai tidak ditemukan.');
         }
 
-        // Validasi input
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'no_telp' => 'nullable|string|max:20',
-        //     'asal_kota' => 'required|string|max:100',
-        //     'tanggal_lahir' => 'required|date',
-        //     'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-        //     'alamat' => 'required|string|max:255',
-        //     'posisi' => 'required|string|max:100',
-        //     'email' => 'required|email|unique:users,email,' . $users->id,
-        // ]);
-
         // Update data pegawai
         $pegawai->update([
-            'name' => $request->name,
-            'no_telp' => $request->no_telp,
-            'asal_kota' => $request->asal_kota,
-            'tanggal_lahir' => $request->tanggal_lahir,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'alamat' => $request->alamat,
-            'posisi' => $request->posisi,
+            'name' => $request->has('name') ? $request->name : $pegawai->name,
+            'no_telp' => $request->has('no_telp') ? $request->no_telp : $pegawai->no_telp,
+            'email_pribadi' => $request->has('email_pribadi') ? $request->email_pribadi : $pegawai->email_pribadi,
+            'asal_kota' => $request->has('asal_kota') ? $request->asal_kota : $pegawai->asal_kota,
+            'tanggal_lahir' => $request->has('tanggal_lahir') ? $request->tanggal_lahir : $pegawai->tanggal_lahir,
+            'jenis_kelamin' => $request->has('jenis_kelamin') ? $request->jenis_kelamin : $pegawai->jenis_kelamin,
+            'alamat' => $request->has('alamat') ? $request->alamat : $pegawai->alamat,
+            'posisi' => $request->has('posisi') ? $request->posisi : $pegawai->posisi,
         ]);
 
         // Update email di tabel users
         $users->update([
-            'email' => $request->email,
+            'email' => $request->has('email') ? $request->email : $users->email,
         ]);
 
         // Redirect dengan pesan sukses
-        return redirect()->route('profil')->with('success', 'Data berhasil diperbarui.');
+        return redirect()->route('profil');
     }
 
     /**
