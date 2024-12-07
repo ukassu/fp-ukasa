@@ -9,24 +9,58 @@
         <style>
 
             #clock {
-                position: absolute;
-                margin-top:32rem;
-                margin-left: 54rem;
-                width: 36%;
+                /* position: absolute; */
+                margin-top:1rem;
+                /* margin-left: 54rem; */
+                width: 100%;
                 height: auto;
-                background-color: #253D90;
-                box-shadow: 2px 2px 10px black;
-                border-radius: 20px;
-                font-size: 52px;
-                color: white;
                 text-align: center;
-                transition: transform ease-in-out 0.3s;
+                border-radius: 20px;
+                font-size: 64px;
+                color: #253D90;
+                text-align: center;
+                /* transition: transform ease-in-out 0.3s; */
             }
 
-            #clock:hover {
+            /* #clock:hover {
                 background-color: #FFC20E;
                 color: black;
                 transform: scale(1.02);
+            } */
+
+            #date {
+                /* position: absolute;
+                margin-top:36rem;
+                margin-left: 54rem; */
+                width: 100%;
+                height: auto;
+                background-image: url('{{ asset("images/pattern3.jpg") }}');
+                background-position: fill;
+                object-fit: cover;
+                box-shadow: 2px 2px 10px black;
+                border-radius: 20px 20px 0 0;
+                font-size: 48px;
+                color: white;   
+                text-align: center;
+                /* transition: transform ease-in-out 0.3s; */
+                
+            }
+
+            .calendar {
+                position: absolute;
+                margin-top: 32rem;
+                margin-left: 54rem;
+                width: 36%;
+                background-color: white;
+                border-radius: 20px;
+                height: 13rem;
+                box-shadow: 2px 2px 8px gray;
+                transition: transform ease-in-out 0.3s;
+            }
+
+            .calendar:hover {
+                transform: scale(1.02);
+                box-shadow: 4px 6px 10px black;
             }
 
             div.carousel{
@@ -41,6 +75,7 @@
 
             div.carousel:hover{
                 transform: scale(1.02);
+                box-shadow: 4px 6px 10px black;
             }
 
             div.carousel-inner{
@@ -114,6 +149,7 @@
                 border: solid #FFC20E;
                 background-color: #FFC20E;
                 color: black;
+                box-shadow: 4px 6px 10px black;
             }
 
             .button-content {
@@ -192,7 +228,15 @@
                 <span class="visually-hidden">Next</span>
                 </button>
         </div>
-        <div id="clock"></div>
+        <div>
+            <form method="GET" action="{{ route('dashboard') }}">
+                <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
+            </form>
+        </div>
+        <div class="calendar">
+            <div id="date"></div>
+            <div id="clock"></div>
+        </div>
         <div class="card dashboard-content-container">
             <div class="card-body">
                 <div class="dasboard-content">
@@ -250,11 +294,6 @@
         <div class="footer-container">
             <p>Copyright &copy;2024; Designed by Ukasa</p>
         </div>
-          <div>
-                <form method="GET" action="{{ route('dashboard') }}">
-                    <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
-                </form>
-          </div>
     </body>
 </html>
 @endsection

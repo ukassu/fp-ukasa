@@ -65,6 +65,24 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+//tanggal
+function displayhari(){
+  const display = document.getElementById('date');
+
+  const date = new Date();
+  const hariIni = date.toLocaleDateString('id-ID', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+  display.textContent = hariIni; 
+}
+setInterval(displayhari(), 1000);
+displayhari();
+
+
 //profile logic
 const btnInfo = document.getElementById('btn-info');
 const btnKontak = document.getElementById('btn-kontak');
