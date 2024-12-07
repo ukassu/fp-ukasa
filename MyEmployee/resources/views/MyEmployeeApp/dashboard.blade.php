@@ -74,7 +74,9 @@
                 </button>
         </div>
           <div>
-                <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, nama</h1>
+                <form method="GET" action="{{ route('dashboard') }}">
+                    <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
+                </form>
           </div>
     </body>
     </html>
