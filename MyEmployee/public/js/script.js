@@ -9,10 +9,10 @@
 //navbar logic
 const lists = document.querySelectorAll(".nav-item .nav-link");
 const navPointer = document.querySelector(".nav-higlighter");
-const logo = document.querySelector(".navbar-brand"); // Selector logo
-const logoutButton = document.querySelector(".logout-button"); // Selector tombol logout
+const logo = document.querySelector(".navbar-brand");
+const logoutButton = document.querySelector(".logout-button"); 
 
-const DEFAULT_NAV_INDEX = 0; // Index default untuk Dashboard
+const DEFAULT_NAV_INDEX = 0; 
 
 const setHighlightPosition = (element) => {
   const parent = element.parentElement;
@@ -59,31 +59,31 @@ logoutButton.addEventListener("click", () => {
 //Jam
 function updateClock() {
   const jam = document.getElementById('clock');
-  const now = new Date();
-  const timeString = now.toLocaleTimeString();
-  
-  jam.textContent = timeString;
+  if (jam) {
+    const now = new Date();
+    jam.textContent = now.toLocaleTimeString();
+    requestAnimationFrame(updateClock);
+  }
 }
-setInterval(updateClock, 1000);
 updateClock();
 
 //tanggal
-function displayhari(){
+function displayhari() {
   const display = document.getElementById('date');
+  
+  if (display) {
+    const date = new Date();
+    const hariIni = date.toLocaleDateString('id-ID', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
 
-  const date = new Date();
-  const hariIni = date.toLocaleDateString('id-ID', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-
-  display.textContent = hariIni; 
+    display.textContent = hariIni;
+  }
 }
-setInterval(displayhari(), 1000);
-displayhari();
-
+document.addEventListener('DOMContentLoaded', displayhari);
 
 //profile logic
 const btnInfo = document.getElementById('btn-info');
