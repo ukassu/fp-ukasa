@@ -99,6 +99,18 @@
             max-width: 75px;
             padding-right: 0.5cm;
         }
+
+        .footer-container {
+                position: absolute;
+                width: 100%;
+                background-color: #253D90;
+                color: white;
+                margin-top: 72rem;
+                font-size: 24px;
+                padding: 10px 0;
+                text-align: center;
+                box-sizing: border-box;
+        }
     </style>
 </head>
 
@@ -137,6 +149,9 @@
     </div>
     @yield('navbar')
 
+    <div class="footer-container"> 
+        <p>Copyright &copy;2024; Designed by Ukasa</p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

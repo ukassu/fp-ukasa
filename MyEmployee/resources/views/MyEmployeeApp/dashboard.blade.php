@@ -143,18 +143,6 @@
                 margin: 0;
             }
 
-            .footer-container {
-                position: absolute;
-                width: 100%;
-                background-color: #253D90;
-                color: white;
-                margin-top: 72rem;
-                font-size: 24px;
-                padding: 10px 0;
-                text-align: center;
-                box-sizing: border-box;
-            }
-
             h1 {
                 font-weight: bold;
             }
@@ -182,15 +170,20 @@
                 <div class="carousel-item" style="height: 20rem;" data-bs-interval="4000">
                     <img src="{{ asset('images/announce1.png') }}" class="carousel-img" alt="announce2">
                 </div>
-                </div>
+            </div>
                 <button class="carousel-control-prev carous-buttonback-l" type="button" data-bs-target="#announcementCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next carous-buttonback-r" type="button" data-bs-target="#announcementCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-                </button>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button> 
+        </div>
+        <div>
+            <form method="GET" action="{{ route('dashboard') }}">
+                <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
+            </form>
         </div>
         <div id="clock"></div>
         <div class="card dashboard-content-container">
@@ -247,14 +240,6 @@
                 </div>
             </div>
         </div>
-        <div class="footer-container">
-            <p>Copyright &copy;2024; Designed by Ukasa</p>
-        </div>
-          <div>
-                <form method="GET" action="{{ route('dashboard') }}">
-                    <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
-                </form>
-          </div>
     </body>
 </html>
 @endsection
