@@ -35,8 +35,6 @@
                 width: 100%;
                 height: auto;
                 background-image: url('{{ asset("images/pattern3.jpg") }}');
-                background-position: fill;
-                object-fit: cover;
                 box-shadow: 2px 2px 10px black;
                 border-radius: 20px 20px 0 0;
                 font-size: 48px;
@@ -280,22 +278,21 @@
                     <div class="modal fade" id="absenmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                           <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header" style="background-color: #253D90; color: white;">
                               <h1 class="modal-title fs-5" id="exampleModalLabel">Absensi</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
                                 <form action="{{ route('absen') }}" method="POST">
                                     @csrf
-                                    <button type="submit">Mulai Bekerja</button>
+                                    <button type="submit" class="btn btn-success" style="width: 200px; margin-bottom: 0.5cm;">Mulai Bekerja</button>
                                 </form>
                                 <form action="{{ route('pulang') }}" method="POST">
                                     @csrf
-                                    <button type="submit">Selesai Bekerja</button>
+                                    <button type="submit" class="btn btn-danger" style="width: 200px; margin-bottom: 0.5cm;">Selesai Bekerja</button>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                           </div>
                         </div>
