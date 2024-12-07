@@ -54,6 +54,17 @@ logoutButton.addEventListener("click", () => {
   handleLogout();
 });
 
+//Jam
+function updateClock() {
+  const jam = document.getElementById('clock');
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  
+  jam.textContent = timeString;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
 //profile logic
 const btnInfo = document.getElementById('btn-info');
 const btnKontak = document.getElementById('btn-kontak');
