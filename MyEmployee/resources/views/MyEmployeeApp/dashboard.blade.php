@@ -356,7 +356,7 @@
                     <div class="modal fade" id="absenmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                           <div class="modal-content">
-                            <div class="modal-header" style="background-color: #253D90; color: white;">
+                            <div class="modal-header" style="background-color: #253D90; color: white; box-shadow: 2px 2px 8px gray;">
                               <h1 class="modal-title fs-5" id="exampleModalLabel">Absensi</h1>
                               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                             </div>
@@ -370,7 +370,7 @@
                                     <button type="submit" class="btn btn-danger" style="width: 200px; margin-bottom: 0.5cm;">Selesai Bekerja</button>
                                 </form>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer" style="box-shadow: 2px 2px 6px gray;">
                             </div>
                           </div>
                         </div>
