@@ -14,7 +14,6 @@ class info extends Component
     public $pegawai;
     public $action;
 
-    // Terima data $pegawai di konstruktor
     public function __construct($pegawai, $action)
     {
         $this->pegawai = $pegawai;

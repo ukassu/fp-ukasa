@@ -63,7 +63,6 @@ class PegawaiController extends Controller
             return redirect()->back()->withErrors('Data pegawai tidak ditemukan.');
         }
 
-        // Update data pegawai
         $pegawai->update([
             'name' => $request->has('name') ? $request->name : $pegawai->name,
             'no_telp' => $request->has('no_telp') ? $request->no_telp : $pegawai->no_telp,
@@ -75,12 +74,10 @@ class PegawaiController extends Controller
             'posisi' => $request->has('posisi') ? $request->posisi : $pegawai->posisi,
         ]);
 
-        // Update email di tabel users
         $users->update([
             'email' => $request->has('email') ? $request->email : $users->email,
         ]);
 
-        // Redirect dengan pesan sukses
         return redirect()->route('profil');
     }
 

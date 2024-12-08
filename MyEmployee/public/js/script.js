@@ -111,3 +111,5 @@ btnInfo.addEventListener('click', () => switchTab('info'));
 btnKontak.addEventListener('click', () => switchTab('kontak'));
 
 switchTab(activeTab);
+
+//notif logic

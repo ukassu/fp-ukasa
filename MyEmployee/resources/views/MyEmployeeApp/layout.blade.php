@@ -136,7 +136,7 @@
                             <a class="nav-link" href="{{ route('profil') }}">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Notifikasi</a>
+                            <a class="nav-link" href="{{ route('notifikasi') }}">Notifikasi</a>
                         </li>
                     </ul>
                     <form action="{{ route('logout')}}" method="post">

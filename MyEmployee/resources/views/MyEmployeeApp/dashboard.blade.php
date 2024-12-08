@@ -379,9 +379,6 @@
             </div>
         </div>
         </div>
-        <div class="footer-container">
-            <p>Copyright &copy;2024; Designed by Ukasa</p>
-        </div>
     </body>
 </html>
 @endsection
