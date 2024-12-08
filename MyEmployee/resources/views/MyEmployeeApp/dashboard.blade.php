@@ -105,6 +105,73 @@
                 background-color: gray
             }
 
+            .profile-card {
+                position: absolute;
+                perspective: 1000px;
+                margin-top: 32rem;
+                margin-left: 13rem;
+                height: 13rem;
+                border-radius: 20px;
+                width: 36%;
+                background-color: white;
+                padding: 10px 10px 20px 10px;
+                box-shadow: 2px 2px 8px gray;
+                transition: transform ease-in-out 0.3s;
+            }
+
+            .profile-card-icon {
+                margin-top: 0.5rem;
+                margin-left: 4rem;
+                width: 17%;
+                height: 40%;
+                border-radius: 46px;
+                text-align: center;
+                font-size: 96px;
+                color: #253D90;
+                box-shadow: 0px 0px 10px gray;
+            }
+
+            .profile-card-header {
+                margin-bottom: 0.8rem;
+                background-color: #253D90;
+                border-radius: 15px 15px 0px 0px;
+                text-align: center;
+                width: 100%;
+                height: auto;
+                box-shadow: 2px 2px 8px gray;
+                font-size: 30px;
+                color: whitesmoke;
+            }
+
+            .profile-card-content {
+                display: flex;
+                flex-direction: row;
+                gap: 2rem;
+                box-sizing: border-box;
+                flex: 1 1 50%;
+            }
+
+            .profile-card-text {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 30%;
+                margin-left: 3rem;
+                text-align: left;
+                background-color: #253D90;
+                border-radius: 0px 0px 20px 0px;
+                color: white;
+                height: 8rem;
+                width: 21rem;
+                font-size: 18px;
+                padding: 5px 10px 5px 15px;
+                box-shadow: 0px 0px 8px gray;
+            }
+
+            .profile-card:hover {
+                transform: scale(1.02);
+                box-shadow: 4px 6px 10px black;
+            }
+
             .dashboard-content-container {
                 border-radius: 2rem;
                 width: 75%;
@@ -214,10 +281,21 @@
                     <span class="visually-hidden">Next</span>
                 </button> 
         </div>
-        <div>
+        <!--editbagian-->
+        <div class="profile-card">
             <form method="GET" action="{{ route('dashboard') }}">
-                <h1 style="position: absolute; margin-top: 14cm; margin-left: 5.5cm;">Welcome!, {{ $pegawai->name }}</h1>
+                <p class="profile-card-header"><b> <span style="color: #FFC20E;">Welcome!,</span> {{ $pegawai->name }}</b></p>
             </form>
+            <div class="profile-card-content">
+                <i class="profile-card-icon fa-regular fa-circle-user"></i>
+                <div class="profile-card-text">
+                    <form action="get" action="{{ route('dashboard') }}">
+                        <p><b><span style="color: #FFC20E;">Posisi :</span> {{ $pegawai->posisi }}</b></p>
+                        <p><b><span style="color: #FFC20E;">Email :</span> {{ $pegawai->email_pribadi }}</b></p>
+                        <p><b><span style="color: #FFC20E;">No.telp :</span> {{ $pegawai->no_telp }}</b></p>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="calendar">
             <div id="date"></div>
