@@ -312,14 +312,18 @@
                             <div class="content-subtitle">Atur dokumen disini!</div>
                         </div>
                     </button>
-                    <button class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#popUpBlocked">
-                        <div class="button-content">
-                            <i class="fa-solid fa-list-check content-icon"></i>
-                        <div class="button-text">
-                            <div class="content-title">Task</div>
-                            <div class="content-subtitle">Lihat tugas anda!</div>
-                        </div>
-                    </button>
+                    <form action="{{ route('task') }}" method="GET">
+                        @csrf
+                        <button class="dashboard-content-button" type="submit">
+                            <div class="button-content">
+                                <i class="fa-solid fa-list-check content-icon"></i>
+                                <div class="button-text">
+                                    <div class="content-title">Task</div>
+                                    <div class="content-subtitle">Lihat tugas anda!</div>
+                                </div>
+                            </div>
+                        </button>
+                    </form>
                     <button type="button" class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#absenmodal">
                         <div class="button-content">
                             <i class="fa-solid fa-clock content-icon"></i>

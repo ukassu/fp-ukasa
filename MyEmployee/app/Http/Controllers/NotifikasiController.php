@@ -27,4 +27,13 @@ class NotifikasiController extends Controller
         $notification->delete();
         return redirect()->route('notifikasi');
     }
+
+    public function markAsRead($id)
+    {
+        $notifikasi = Notifikasi::findOrFail($id);
+        $notifikasi->dibaca = true;
+        $notifikasi->save();
+
+        return back();
+    }
 }

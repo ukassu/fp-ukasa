@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\pegawai;
 use App\Models\User;
+use App\Models\notifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -76,6 +77,12 @@ class PegawaiController extends Controller
 
         $users->update([
             'email' => $request->has('email') ? $request->email : $users->email,
+        ]);
+
+        $pesan = "{$pegawai->name} telah melakukan update profil";
+        notifikasi::create([
+            'pesan' => $pesan,
+            'user_id' => $users->id,
         ]);
 
         return redirect()->route('profil');

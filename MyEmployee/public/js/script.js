@@ -113,3 +113,9 @@ btnKontak.addEventListener('click', () => switchTab('kontak'));
 switchTab(activeTab);
 
 //notif logic
+function markAsRead(notifId) {
+  const notifElement = document.getElementById(notifId);
+  if (notifElement) {
+      notifElement.style.opacity = '0.5';
+  }
+}

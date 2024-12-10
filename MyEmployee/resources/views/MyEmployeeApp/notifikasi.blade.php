@@ -103,17 +103,26 @@
                 <button class="clear-button" type="submit"><i class="fa-solid fa-trash" style="padding: 3px 3px 3px 3px;"></i> Clear All</button>
             </form>
             @foreach($notifikasi as $notifikasi)
-                    <form class="notification-content-container" action="{{ route('notifikasi.delete', $notifikasi->id) }}" method="POST">
-                        @csrf
-                        <div class="notification-message">
-                            <p><b>{{ $notifikasi->pesan }}</b></p>
-                        </div>
-                        <div class="notif-button-container">
-                            <button class="view-btn" type="submit"><i class="fa-solid fa-eye" style="padding: 3px 3px 3px 3px;"></i> Mark as read</button>
-                            <button class="delete-btn" type="submit"><i class="fa-solid fa-delete-left" style="padding: 3px 3px 3px 3px;"></i> Delete</button>
-                        </div>
-                    </form>
-                    <hr style="width: 100%; border: 1px solid black;">
+                <div class="notification-content-container">
+                    <div class="notification-message" id="notif-{{ $notifikasi->id }}" style="opacity: {{ $notifikasi->dibaca ? '0.5' : '1' }}">
+                        <p><b>{{ $notifikasi->pesan }}</b></p>
+                    </div>
+                    <div class="notif-button-container">
+                        <form action="{{ route('notifikasi.markasread', $notifikasi->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button class="view-btn" type="submit">
+                                <i class="fa-solid fa-eye" style="padding: 3px;"></i> Mark as read
+                            </button>
+                        </form>
+                        <form action="{{ route('notifikasi.delete', $notifikasi->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button class="delete-btn" type="submit">
+                                <i class="fa-solid fa-delete-left" style="padding: 3px 3px 3px 3px;"></i> Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <hr style="width: 100%; border: 1px solid black;">
             @endforeach
         </div>
     </div>

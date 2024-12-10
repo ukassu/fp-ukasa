@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotifikasiController;
+use App\Http\Controllers\TaskController;
 
 
 Route::match(['get', 'post'], '/register', [AuthController::class, 'register'])->name('register');
@@ -26,3 +27,7 @@ Route::get('/task', function () {
 Route::get('/notifikasi', [NotifikasiController::class, 'show'])->middleware(['auth'])->name('notifikasi');
 Route::post('/notifikasi/clear', [NotifikasiController::class, 'clear'])->middleware(['auth'])->name('notifikasi.clear');
 Route::post('/notifikasi/delete/{id}', [NotifikasiController::class, 'delete'])->middleware(['auth'])->name('notifikasi.delete');
+Route::post('/notifikasi/markasread/{id}', [NotifikasiController::class, 'markAsRead'])->middleware(['auth'])->name('notifikasi.markasread');
+
+Route::get('/task', [TaskController::class, 'index'])->middleware(['auth'])->name('task');
+Route::post('/task/togglecomplete/{task}', [TaskController::class, 'toggleComplete'])->middleware(['auth'])->name('task.toggle');

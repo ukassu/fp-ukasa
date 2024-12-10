@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notifikasis', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->text('pesan');
-            $table->boolean('dibaca')->default(false);
+            $table->string('nama_tugas');
+            $table->text('deskripsi');
+            $table->boolean('is_completed')->default(false);
             $table->foreignId('user_id')->constrained(table:'users', column:'id');
             $table->timestamps();
         });
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notifikasis');
+        Schema::dropIfExists('tasks');
     }
 };
