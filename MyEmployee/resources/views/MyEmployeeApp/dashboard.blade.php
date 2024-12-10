@@ -244,6 +244,10 @@
                 margin: 0;
             }
 
+            form {
+                display: contents;
+            }
+
             h1 {
                 font-weight: bold;
             }
@@ -251,7 +255,7 @@
             span {
                 font-family: "albert sans", "serif";
             }
-
+            
         </style>
     </head>
     <body>
@@ -281,7 +285,6 @@
                     <span class="visually-hidden">Next</span>
                 </button> 
         </div>
-        <!--editbagian-->
         <div class="profile-card">
             <form method="GET" action="{{ route('dashboard') }}">
                 <p class="profile-card-header"><b> <span style="color: #FFC20E;">Welcome!,</span> {{ $pegawai->name }}</b></p>
@@ -367,11 +370,11 @@
                             <div class="modal-body">
                                 <form action="{{ route('absen') }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-success" style="width: 200px; margin-bottom: 0.5cm;">Mulai Bekerja</button>
+                                    <button type="submit" class="btn btn-success" style="width: 200px; margin: 0.5cm 1cm 0.5cm 0.3cm;">Mulai Bekerja</button>
                                 </form>
                                 <form action="{{ route('pulang') }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-danger" style="width: 200px; margin-bottom: 0.5cm;">Selesai Bekerja</button>
+                                    <button type="submit" class="btn btn-danger" style="width: 200px; margin-top: 0.5cm 0.3cm 0.5cm 0cm;">Selesai Bekerja</button>
                                 </form>
                             </div>
                             <div class="modal-footer" style="box-shadow: 2px 2px 6px gray;">

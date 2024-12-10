@@ -17,7 +17,7 @@
 
             .button-position {
                 position: relative;
-                left: 6cm;
+                left: 5cm;
                 padding-top: 0.5cm;
                 padding-bottom: 0.5cm;
             }
@@ -49,9 +49,8 @@
 
             .navigation-section {
                 position: absolute;
-                top: 17rem;
-                width: 25%;
-                left: 5cm;
+                margin: 22rem 10rem 10rem 12rem;
+                width: 25%; 
                 border-radius: 1rem;
                 box-shadow: 2px 2px 8px gray;
             }

@@ -1,4 +1,4 @@
-<div style="position: absolute; top: 3cm; left: 20cm; width: 45%; box-shadow: 2px 2px 8px gray;" class="card">
+<div style="position: absolute; margin: 12rem 0rem 10rem 48rem; width: 40%; box-shadow: 2px 2px 8px gray;" class="card">
     <div class="card-body">
         <form method="POST" action="{{ route('profil.update') }}">
             @csrf
