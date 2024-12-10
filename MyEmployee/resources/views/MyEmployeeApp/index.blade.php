@@ -26,6 +26,8 @@
             justify-content: center;
             align-items: center;
         }
+
+
     </style>
 </head>
 
@@ -47,8 +49,8 @@
                     <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password" aria-describedby="emailHelp">
                 </div>
                 <div style="width: 75%;">
-                    <a href="" style="color: #253D90; position: relative; left: 9.4cm; font-size: 14px;"><b>Lupa Password</b></a>
-                    <button type="submit" style="font-family: albert sans; color: white; background-color: #253D90; border-radius: 5px; width: 460px; height: 40px; position: relative;">Sign in</button>
+                    <a href="{{ route('register') }}" style="color: #253D90; position: relative; left: 10cm; font-size: 14px;"><b>Belum punya akun?</b></a>
+                    <button type="submit" style="font-family: albert sans; color: white; background-color: #253D90; border-radius: 5px; width: 510px; height: 40px; position: relative;">Sign in</button>
                 </div>
             </div>
         </form>

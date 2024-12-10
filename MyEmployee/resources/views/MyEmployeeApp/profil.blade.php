@@ -17,7 +17,7 @@
 
             .button-position {
                 position: relative;
-                left: 5cm;
+                left: 6cm;
                 padding-top: 0.5cm;
                 padding-bottom: 0.5cm;
             }
@@ -42,7 +42,7 @@
             }
 
             .nav-button {
-                margin-left: 3rem;
+                margin-left: 4rem;
                 margin-top: 1rem;
                 margin-bottom: 1rem;
             }

@@ -19,6 +19,10 @@ Route::get('/dashboard', [DashboardController::class, 'show'])->middleware(['aut
 Route::post('/dashboard/absen', [DashboardController::class, 'absen'])->middleware(['auth'])->name('absen');
 Route::post('/dashboard/pulang', [DashboardController::class, 'pulang'])->middleware(['auth'])->name('pulang');
 
+Route::get('/task', function () {
+    return view('MyEmployeeApp.task');
+})->name('task');
+
 Route::get('/notifikasi', [NotifikasiController::class, 'show'])->middleware(['auth'])->name('notifikasi');
 Route::post('/notifikasi/clear', [NotifikasiController::class, 'clear'])->middleware(['auth'])->name('notifikasi.clear');
 Route::post('/notifikasi/delete/{id}', [NotifikasiController::class, 'delete'])->middleware(['auth'])->name('notifikasi.delete');

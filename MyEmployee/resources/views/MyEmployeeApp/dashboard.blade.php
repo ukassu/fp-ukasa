@@ -304,7 +304,7 @@
         <div class="card dashboard-content-container">
             <div class="card-body">
                 <div class="dasboard-content">
-                    <button class="dashboard-content-button">
+                    <button class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#popUpBlocked">
                         <div class="button-content">
                             <i class="fa-solid fa-folder content-icon"></i>
                         <div class="button-text">
@@ -312,7 +312,7 @@
                             <div class="content-subtitle">Atur dokumen disini!</div>
                         </div>
                     </button>
-                    <button class="dashboard-content-button">
+                    <button class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#popUpBlocked">
                         <div class="button-content">
                             <i class="fa-solid fa-list-check content-icon"></i>
                         <div class="button-text">
@@ -328,14 +328,14 @@
                             <div class="content-subtitle">Jangan lupa absen!</div>
                         </div>
                     </button>
-                    <button class="dashboard-content-button">
+                    <button class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#popUpBlocked">
                         <div class="button-content">
                             <i class="fa-solid fa-briefcase content-icon"></i>
                         <div class="button-text">
                             <div class="content-title">Portofolio</div>
                             <div class="content-subtitle">Perbarui Portofolio.</div>
                         </div>
-                        <button class="dashboard-content-button">
+                        <button class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#popUpBlocked"> 
                             <div class="button-content">
                                 <i class="fa-solid fa-user-tie content-icon"></i>
                             <div class="button-text">
@@ -343,7 +343,7 @@
                                 <div class="content-subtitle">Profil anda di perusahaan.</div>
                             </div>
                         </button>
-                        <button class="dashboard-content-button">
+                        <button class="dashboard-content-button" data-bs-toggle="modal" data-bs-target="#popUpBlocked">
                             <div class="button-content">
                                 <i class="fa-solid fa-file content-icon"></i>
                             <div class="button-text">
@@ -353,11 +353,11 @@
                         </button>
                     </button>
                     {{-- modal --}}
-                    <div class="modal fade" id="absenmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="absenmodal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                           <div class="modal-content">
                             <div class="modal-header" style="background-color: #253D90; color: white; box-shadow: 2px 2px 8px gray;">
-                              <h1 class="modal-title fs-5" id="exampleModalLabel">Absensi</h1>
+                              <h1 class="modal-title fs-5" id="modalLabel">Absensi</h1>
                               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
@@ -374,7 +374,26 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                    </div>
+                    <div class="modal fade" id="popUpBlocked" tabindex="-1" aria-labelledby="dokumenModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #253D90; color: white; box-shadow: 2px 2px 8px gray; text-align: center;">
+                                    <h5 class="modal-title" id="dokumenModalLabel" style="font-weight: bold; margin: auto;">
+                                        Maaf, fitur web masih dalam masa pengembangan!
+                                    </h5>
+                                </div>
+                                <div class="modal-body" style="text-align: center; padding: 2rem;">
+                                    <p style="color: #253D90; font-size: 16px;">
+                                        Silakan kembali nanti untuk pembaruan lebih lanjut.
+                                    </p>
+                                </div>
+                                <div class="modal-footer" style="justify-content: center; box-shadow: 2px 2px 8px gray;">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="width: 150px;">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
